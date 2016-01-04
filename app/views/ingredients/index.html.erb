@@ -1,0 +1,6 @@
+<% @ingredients.each do |ingredient| %>
+  <h3><%= link_to("#{ingredient.name}", ingredient_path(ingredient)) %></h3>
+  <%= button_to('Delete ingredient', ingredient_path(ingredient), method: :delete, data: {confirm: 'Delete this ingredient? Are you sure?!'}) %>
+  <br>
+<% end %>
+<%= button_to('New ingredient', new_ingredient_path, method: :get)%>
