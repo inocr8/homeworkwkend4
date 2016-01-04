@@ -1,0 +1,16 @@
+<h1> <%= @recipe.name %> </h1>
+<%= image_tag(@recipe.image, alt:'No image', width: 200) %>
+<h2><%= @recipe.category %></h2>
+<h2><%= @recipe.description %></h2>
+<br>
+<h3>The ingredients in this recipe are:-</h3>
+<%= @recipe.ingredients %>
+<br><br>
+<h3>The directions for this recipe are:-</h3>
+<%= @recipe.directions %>
+<br><br>
+<h3>The benefits of this recipe are:-</h3>
+<%= @recipe.benefits %>
+<br><br>
+<%= button_to('Edit recipe', edit_recipe_path(@recipe), method: :get) %>
+<%= button_to('Delete recipe', recipe_path(@recipe), method: :delete, data: {confirm: 'Delete this recipe? Are you sure?!'}) %>

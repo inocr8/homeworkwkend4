@@ -1,0 +1,6 @@
+<% @recipes.each do |recipe| %>
+  <%= link_to("#{recipe.name}", recipe_path(recipe)) %>
+  <%= button_to('Delete recipe', recipe_path(recipe), method: :delete, data: {confirm: 'Delete this recipe? Are you sure?!'}) %>
+  <br>
+<% end %>
+<%= button_to('New recipe', new_recipe_path, method: :get)%>

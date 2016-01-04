@@ -1,0 +1,13 @@
+<h1> <%= @category.name %> </h1>
+<%= image_tag(@category.image, alt:'No image', width: 200) %>
+<h2><%= @category.colour %></h2>
+<h3>The recipes in this category are:-</h3>
+
+<% @category.recipes.each do |recipe| %>
+  <%= recipe.name %>
+  <%= image_tag(recipe.image, alt:'No image', width: 200) %>
+  <%= recipe.description %>
+  <%= link_to("#{recipe.name}", recipe_path(recipe)) %><br><br>
+<% end %>
+<%= button_to('Edit category', edit_category_path(@category), method: :get) %>
+<%= button_to('Delete category', category_path(@category), method: :delete, data: {confirm: 'Delete this category? Are you sure?!'}) %>

@@ -1,0 +1,15 @@
+<%= form_for @category do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :colour %>
+  <%= f.text_field :colour %>
+  <br>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+  <br>
+  <%= f.submit 'Create category!' %>
+<% end %>
